@@ -19,7 +19,7 @@ export default function CreateExercise() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/users/')
+    axios.get('/api/users/')
       .then(response => {
         if (response.data.length > 0) {
             setState({
@@ -32,7 +32,7 @@ export default function CreateExercise() {
       .catch((error) => {
         console.log(error);
       })
-
+        //eslint-disable-next-line
   },[])
 
   function handleChange(e) {
@@ -53,7 +53,7 @@ export default function CreateExercise() {
 
   function handleSubmit(e){
       e.preventDefault();
-      axios.post('http://localhost:5000/api/exercises/add',exercise)
+      axios.post('/api/exercises/add',exercise)
       .then(res=> console.log(res.data))  
 
       history.push('/')

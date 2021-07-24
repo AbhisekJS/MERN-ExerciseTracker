@@ -24,15 +24,16 @@ export default function ExerciseList(){
 
     useEffect(()=>{
         setLoading(true)
-        axios.get(' http://localhost:5000/api/exercises/')
+        axios.get('/api/exercises/')
         .then(response => {
             setLoading(false)
             setExercises(response.data)
         })
+        // eslint-disable-next-line
     },[])
 
     const deleteExercise=(id)=>{
-        axios.delete('http://localhost:5000/api/exercises/'+id)
+        axios.delete('/api/exercises/'+id)
           .then(response => { console.log(response.data)});
     
         setExercises(

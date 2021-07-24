@@ -11,7 +11,7 @@ export default function CreateUser(){
             username,
         }
 
-        axios.post('http://localhost:5000/api/users/add',user)
+        axios.post('/api/users/add',user)
         setUsername('')
     }
 
